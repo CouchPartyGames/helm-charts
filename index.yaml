@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  fleet:
+  - apiVersion: v2
+    appVersion: 1.0.9
+    created: "2022-12-01T15:03:50.384017979Z"
+    description: Deploy Fleet (Dedicated Game Servers) in Agones
+    digest: fcf3ca72e1e75e6dd6a001272ffd235a4f8c2894d3d27002cf4b3f11c9090b6a
+    name: fleet
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/cpg-helm/releases/download/fleet-1.0.9/fleet-1.0.9.tgz
+    version: 1.0.9
+  tournament-time:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-12-01T15:03:50.511108044Z"
+    description: A Helm chart for Kubernetes
+    digest: 4bad8dee36826a3e7d9c57d1b9f816857e81e3638320171e1c3e4cfba8c34ca0
+    name: tournament-time
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
+    version: 0.0.1
+generated: "2022-12-01T15:03:50.511122344Z"
