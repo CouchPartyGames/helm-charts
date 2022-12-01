@@ -1,0 +1,110 @@
+
+
+fleet:
+  # -- name of the fleet 
+  name: ""
+
+  labels: {}
+  #  customer: some-company
+  #  game: some-game
+  #  region: some-region
+
+  annotations: {}
+  #  test: my-test
+
+  # -- number of instances to run
+  scheduling: Packed
+  #scheduling: Distributed
+
+  # -- number of instances to run
+  replicas: 1
+
+  #strategy:
+  #  type: RollingUpdate
+  #  maxSurge: 25%
+  #  maxUnavailable: 25%
+
+  networkPolicy:
+    enabled: false
+
+gameServer:
+  container:
+    - name: "default"
+      image: ""
+      tag: ""
+      #registrySecret: ""
+      #command: ""
+      args: []
+      envs: {}
+      #resources:
+      #  requests:
+      #    memory: "64Mi"
+      #    cpu: "20m"
+      #  limits:
+      #    memory: "256Mi"
+      #    cpu: "200m"
+      port:
+        containerPort: 7888
+        hostPort: 6500
+        portPolicy: Dynamic
+        protocol: UDP
+      ports: 
+      - containerPort: 7888
+        hostPort: 6500
+        portPolicy: Dynamic
+        protocol: UDP
+
+
+  health:
+    # -- enable/disable health check
+    enabled: false
+    # -- number of seconds to delay before starting health check
+    initialDelaySeconds: 20
+    # -- number of seconds between health checks
+    periodSeconds: 10
+    # -- number of consective failures
+    failureThreshold: 3
+
+  nodeSelector: {}
+    #kubernetes.io/os: windows
+    #kubernetes.io/os: linux
+    
+  tolerations: []
+
+  sdkServer:
+    logLevel: Info
+    #logLevel: Error
+    #logLevel: Debug
+
+    grpcPortEnabled: false
+    grpcPort: 9357
+    httpPortEnabled: false
+    httpPort: 9358
+
+
+dockerRegistry:
+  name: "my-secret"
+  enabled: false
+
+  secret: ""
+
+
+autoScaler:
+  enabled: false
+  type: "buffer"
+  #type: "webhook"
+  
+  buffer: 
+    bufferSize: 2
+    minReplicas: 0
+    maxReplicas: 10
+
+  webhook: {}
+
+
+
+#autoScalerWebhook:
+  #labels: {}
+  #serviceAccount: autoscaler
+  #image: gcr.io/agones-images/autoscaler-webhook
+  #tag: 0.4

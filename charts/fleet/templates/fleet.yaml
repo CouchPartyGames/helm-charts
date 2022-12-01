@@ -1,0 +1,99 @@
+---
+# https://agones.dev/site/docs/reference/fleet/
+# https://agones.dev/site/docs/reference/gameserver/
+
+apiVersion: "agones.dev/v1"
+kind: Fleet
+metadata:
+  name: {{ .Values.fleet.name | default "default-fleet" }}
+  {{- if .Values.fleet.labels }}
+  labels:
+    {{- range $key, $val := .Values.fleet.labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+  {{- end }}
+
+  {{- if .Values.fleet.annotations }}
+  annotations:
+    {{- range $key, $val := .Values.fleet.annotations }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+  {{- end }}
+spec:
+  {{- if .Values.fleet.replicas }}
+  replicas: {{ .Values.fleet.replicas | default "1" }}
+  {{- end }}
+  scheduling: {{ .Values.fleet.scheduling | default "Packed" }}
+  {{ if .Values.fleet.strategy }}
+  strategy:
+{{ toYaml .Values.fleet.strategy | indent 4 }}
+  {{ end }}
+  template:
+    {{- if .Values.fleet.labels }}
+    metadata:
+      labels:
+        {{- range $key, $val := .Values.fleet.labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+    {{- end }}
+    spec:
+      ports:
+      {{- range .Values.gameServer.container }}
+      - name: {{ .name | quote }}
+        containerPort: {{ .port.containerPort }}
+        protocol: {{ .port.protocol | default "UDP" }}
+        {{- if eq .port.portPolicy "Static" }}
+        portPolicy: "Static"
+        hostPort: {{ .port.hostPort }}
+        {{- else }}
+        portPolicy: "Dynamic"
+        {{- end }}
+      {{- end }}
+      {{- if .Values.gameServer.health.enabled }}
+      health:
+        disabled: false
+        initialDelaySeconds: {{ .Values.gameServer.health.initialDelaySeconds }}
+        periodSeconds: {{ .Values.gameServer.health.periodSeconds | default "10" }}
+        failureThreshold: {{ .Values.gameServer.health.failureThreshold | default "3"}}
+      {{- end }}
+      sdkServer:
+        logLevel: {{ .Values.gameServer.sdkServer.logLevel | default "Info" }}
+        grpcPort: {{ .Values.gameServer.sdkServer.grpcPort | default "9357" }}
+        httpPort: {{ .Values.gameServer.sdkServer.httpPort | default "9358" }}
+      template:
+        spec:
+          containers:
+          {{- range .Values.gameServer.container }}
+          - name: {{ .name | quote }}
+            image: "{{ .image }}:{{ .tag }}"
+            {{- if .command }}
+            command: {{ .command | quote }}
+            {{- end }}
+            {{- if .args }}
+            args: 
+            {{- range .args }}
+         	- {{ . }}
+            {{- end }}
+            {{- end }}
+            {{- if .env }}
+            env:
+            {{- range $key, $val := .env }}
+            - name: {{ $key }}
+              value: {{ $val | quote }}
+            {{- end }}
+            {{- end }}
+            {{- if .resources }}
+            resources:
+              {{- toYaml .resources | nindent 14 }}
+            {{- end }}
+          {{- end }}
+          {{- if .Values.gameServer.registrySecret }}
+          imagePullSecrets:
+          - name: {{ .Values.gameServer.registrySecret }}
+          {{- end }}
+          {{- if .Values.gameServer.nodeSelector }}
+          nodeSelector:
+            {{- range $key, $val := .Values.gameServer.nodeSelector }}
+            {{ $key }}: {{ $val | quote }}
+            {{- end }}
+          {{- end }}

@@ -1,0 +1,51 @@
+{{ if ( eq .Values.autoScaler.type "webhook" ) }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: autoscaler-webhook-service
+  labels:
+    app: autoscaler-webhook
+spec:
+  selector:
+    app: autoscaler-webhook
+  ports:
+  - port: 8000
+    protocol: TCP
+    name: https
+    targetPort: autoscaler 
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autoscaler-webhook
+  labels:
+    app: autoscaler-webhook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autoscaler-webhook
+  template:
+    metadata:
+      labels:
+        app: autoscaler-webhook
+    spec:
+      #serviceAccount: autoscaler-webhook
+      containers:
+      - name: autoscaler-webhook
+        image: gcr.io/agones-images/autoscaler-webhook:0.4
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8000
+        livenessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /health
+            port: http
+          initialDelaySeconds: 3
+          periodSeconds: 5
+{{ end }}
