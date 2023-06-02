@@ -1,4 +1,4 @@
-# cpg-helm
+# helm-charts
 couchpartygames helm charts collection of maintained charts for https://couchpartygames.github.io projects. The charts can be added using following command:
 
 
@@ -20,8 +20,11 @@ the latest versions of the packages.  You can then run `helm search repo
 To install the fleet chart:
 
     helm install fleet couchpartygames/fleet
+    helm install fleet couchpartygames/tournament-time
+    helm install fleet couchpartygames/open-match-components
 
 To uninstall the chart:
 
-    helm delete fleetArgo Helm is a collection of community maintained charts for https://argoproj.github.io projects. The charts can be added using following command:
+    helm delete fleet
+    
 
