@@ -11,6 +11,17 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/fleet-1.0.9/fleet-1.0.9.tgz
     version: 1.0.9
+  open-match-components:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-06-02T17:31:20.626383347Z"
+    description: OpenMatch Customzed components for Match making, director and frontend
+    digest: 50da0f9ec5eb3c0b45406d0a6ae0cdd808df28aae79f7116f5341d1f444e5d8d
+    name: open-match-components
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/open-match-components-0.0.1/open-match-components-0.0.1.tgz
+    version: 0.0.1
   tournament-time:
   - apiVersion: v2
     appVersion: 0.0.1
@@ -22,4 +33,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2022-12-01T15:03:50.511122344Z"
+generated: "2023-06-02T17:31:20.626396747Z"
