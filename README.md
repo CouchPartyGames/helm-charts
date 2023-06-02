@@ -2,7 +2,7 @@
 couchpartygames helm charts collection of maintained charts for https://couchpartygames.github.io projects. The charts can be added using following command:
 
 
-    helm repo add couchpartygames https://couchpartygames.github.io/cpg-helm
+    helm repo add couchpartygames https://couchpartygames.github.io/helm-charts
 
 
 ## Usage
