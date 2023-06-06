@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: matchfunction
+  labels:
+    {{- include "mm-custom.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.matchfunction.service.type }}
+  ports:
+    - name: grpc
+      port: {{ .Values.matchfunction.service.port }}
+      protocol: TCP
+  selector:
+	app: "open-match-components"
+	component: "matchfunction"

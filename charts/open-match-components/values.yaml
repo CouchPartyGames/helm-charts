@@ -81,7 +81,7 @@ director:
   enabled: true
 
   image:
-    repository: nginx
+    repository: ghcr.io/couchpartygames/director
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
     tag: ""
@@ -103,7 +103,7 @@ frontend:
   enabled: true
 
   image:
-    repository: nginx
+    repository: ghcr.io/couchpartygames/frontend
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
     tag: ""
@@ -116,7 +116,7 @@ frontend:
 
   affinity: {}
 
-matchmaker:
+matchfunction:
   # -- enable/disable matchmatcher
   enabled: ture
 
@@ -133,12 +133,16 @@ matchmaker:
   #   memory: 128Mi
 
   image:
-    repository: nginx
+    repository: ghcr.io/couchpartygames/match-function
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
     tag: ""
 
   imagePullSecrets: []
+
+  service:
+    type: ClusterIP
+    port: 50502
 
   env: {}
 
