@@ -1,9 +1,9 @@
 apiVersion: v2
-appVersion: "0.0.2"
+appVersion: "0.0.3"
 kubeVersion: ">1.23.0-0"
-description: Tournament Manager
-name: tournament-time
-version: 0.0.2
+description: Realtime Tournament Manager
+name: tournament-party
+version: 0.0.3
 home: https://github.com/couchpartygames/helm-charts
 sources:
   - https://github.com/couchpartygames/TournamentParty
