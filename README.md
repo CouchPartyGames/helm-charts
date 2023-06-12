@@ -20,11 +20,11 @@ the latest versions of the packages.  You can then run `helm search repo
 To install the fleet chart:
 
     helm install fleet couchpartygames/fleet
-    helm install fleet couchpartygames/tournament-time
-    helm install fleet couchpartygames/open-match-components
+    helm install tournament-party couchpartygames/tournament-party
+    helm install open-match-components couchpartygames/open-match-components
 
 To uninstall the chart:
 
-    helm delete fleet
+    helm delete <chart-name>
     
 
