@@ -32,6 +32,28 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/helm-charts/releases/download/open-match-components-0.0.1/open-match-components-0.0.1.tgz
     version: 0.0.1
+  tournament-party:
+  - apiVersion: v2
+    appVersion: 0.0.3
+    created: "2023-06-12T17:18:33.164143514Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.23.0
+    description: Realtime Tournament Manager
+    digest: 805e9701747d7e9ec1eacba2fbc26851384311f4fc07d6c4f5552eb04797cf12
+    home: https://github.com/couchpartygames/helm-charts
+    keywords:
+    - tournament
+    - games
+    kubeVersion: '>1.23.0-0'
+    name: tournament-party
+    sources:
+    - https://github.com/couchpartygames/TournamentParty
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/tournament-party-0.0.3/tournament-party-0.0.3.tgz
+    version: 0.0.3
   tournament-time:
   - apiVersion: v2
     appVersion: 0.0.2
@@ -64,4 +86,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-12T17:03:50.195847111Z"
+generated: "2023-06-12T17:18:33.164156015Z"
