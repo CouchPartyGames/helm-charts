@@ -34,6 +34,27 @@ entries:
     version: 0.0.1
   tournament-time:
   - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2023-06-12T17:03:50.19582981Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.23.0
+    description: Tournament Manager
+    digest: 7d13369c2e4c1b2a7dfa1e0ba0000c5c359c686dd7fbc54494f0d53aa59eed0c
+    home: https://github.com/couchpartygames/helm-charts
+    keywords:
+    - tournament
+    - games
+    kubeVersion: '>1.23.0-0'
+    name: tournament-time
+    sources:
+    - https://github.com/couchpartygames/TournamentParty
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/tournament-time-0.0.2/tournament-time-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
     created: "2022-12-01T15:03:50.511108044Z"
     description: A Helm chart for Kubernetes
@@ -43,4 +64,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-06T17:20:18.369972179Z"
+generated: "2023-06-12T17:03:50.195847111Z"
