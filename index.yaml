@@ -32,7 +32,34 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/helm-charts/releases/download/open-match-components-0.0.1/open-match-components-0.0.1.tgz
     version: 0.0.1
+  openmatch-frontend:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-11-14T22:55:40.84259911Z"
+    description: Frontend service for Open Match
+    digest: 3bd8169fbd561307ed501867854d292bd568317f5ab8ecb018eea8d487498323
+    name: openmatch-frontend
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/openmatch-frontend-0.0.1/openmatch-frontend-0.0.1.tgz
+    version: 0.0.1
   tournament-party:
+  - apiVersion: v2
+    appVersion: 0.0.14
+    created: "2023-11-14T22:55:40.989956014Z"
+    description: Realtime Tournament Manager
+    digest: 814b135a781826ce80aaf6e100bd59ca49d6614f8ac481654b498c1e9a2199e0
+    home: https://github.com/couchpartygames/helm-charts
+    keywords:
+    - tournament
+    - games
+    kubeVersion: '>1.23.0-0'
+    name: tournament-party
+    sources:
+    - https://github.com/couchpartygames/tournament-party
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/tournament-party-0.0.4/tournament-party-0.0.4.tgz
+    version: 0.0.4
   - apiVersion: v2
     appVersion: 0.0.3
     created: "2023-06-12T17:18:33.164143514Z"
@@ -86,4 +113,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-12T17:18:33.164156015Z"
+generated: "2023-11-14T22:55:40.989969279Z"
