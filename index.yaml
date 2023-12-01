@@ -65,6 +65,16 @@ entries:
     version: 0.0.1
   openmatch-function:
   - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2023-12-01T21:36:55.26634527Z"
+    description: A Helm chart for Kubernetes
+    digest: 8ae907d55ea234d73f3c15d8b4d37859ec3cb6f9bf1f3901780caf83908d498c
+    name: openmatch-function
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/openmatch-function-0.0.2/openmatch-function-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
     created: "2023-12-01T21:32:17.938627919Z"
     description: A Helm chart for Kubernetes
@@ -144,4 +154,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2023-12-01T21:32:17.93865005Z"
+generated: "2023-12-01T21:36:55.266417784Z"
