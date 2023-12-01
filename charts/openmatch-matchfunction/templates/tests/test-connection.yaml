@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "openmatch-matchfunction.fullname" . }}-test-connection"
+  labels:
+    {{- include "openmatch-matchfunction.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "openmatch-matchfunction.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
