@@ -45,6 +45,16 @@ entries:
     version: 0.0.1
   openmatch-frontend:
   - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2024-06-10T20:21:44.627302475Z"
+    description: Frontend service for Open Match
+    digest: cb328a753c572fed860b3c9127c13e59322605dba08b651fefe6b42c6b8515d6
+    name: openmatch-frontend
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/openmatch-frontend-0.1.2/openmatch-frontend-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: 0.0.5
     created: "2023-11-21T18:35:38.447651208Z"
     description: Frontend service for Open Match
@@ -205,4 +215,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2024-06-10T19:01:56.175510966Z"
+generated: "2024-06-10T20:21:44.709596353Z"
