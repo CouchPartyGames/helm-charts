@@ -34,6 +34,16 @@ entries:
     version: 0.0.1
   openmatch-director:
   - apiVersion: v2
+    appVersion: 0.2.1
+    created: "2024-06-11T15:54:45.45047154Z"
+    description: OpenMatch(openmatch.dev) director service
+    digest: 25355429c76977c64a9045de5a951f3e377d99c542d981d635fa425b2931935a
+    name: openmatch-director
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/openmatch-director-0.2.1/openmatch-director-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: 0.2.0
     created: "2024-06-10T20:42:53.146732981Z"
     description: OpenMatch(openmatch.dev) director service
@@ -225,4 +235,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2024-06-10T20:42:53.229757606Z"
+generated: "2024-06-11T15:54:45.450512888Z"
