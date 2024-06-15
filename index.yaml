@@ -106,6 +106,16 @@ entries:
     version: 0.0.1
   openmatch-function:
   - apiVersion: v2
+    appVersion: 0.4.16
+    created: "2024-06-15T00:57:34.038143157Z"
+    description: OpenMatch(openmatch.dev) Match Function
+    digest: 1f1d47119e630208c8d260ec90e2b8323c16ba9dc371d96a07c977e53e5f5d4a
+    name: openmatch-function
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/openmatch-function-0.4.16/openmatch-function-0.4.16.tgz
+    version: 0.4.16
+  - apiVersion: v2
     appVersion: 0.4.0
     created: "2024-06-12T20:49:55.516368266Z"
     description: OpenMatch(openmatch.dev) Match Function
@@ -265,4 +275,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2024-06-12T20:49:55.51641869Z"
+generated: "2024-06-15T00:57:34.038206175Z"
