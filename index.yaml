@@ -11,6 +11,26 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/fleet-1.0.9/fleet-1.0.9.tgz
     version: 1.0.9
+  nakama:
+  - apiVersion: v2
+    appVersion: 3.22.0
+    created: "2024-07-08T21:21:43.442432916Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.5.14
+    - condition: cockroachdb.enabled
+      name: cockroachdb
+      repository: https://charts.cockroachdb.com/
+      version: 13.0.2
+    description: A Helm chart for Nakama open source game server.
+    digest: 795fbb824dd2a25eff8c10f91fd6c97d179777c6ea6cbfd5d94837128478a0a8
+    name: nakama
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/nakama-0.2.1/nakama-0.2.1.tgz
+    version: 0.2.1
   open-match-components:
   - apiVersion: v2
     appVersion: 0.0.3
@@ -275,4 +295,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2024-06-15T00:57:34.038206175Z"
+generated: "2024-07-08T21:21:43.442470756Z"
