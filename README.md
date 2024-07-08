@@ -1,6 +1,7 @@
 # helm charts 
 couchpartygames helm charts
 
-- open match components
-- tournament party
-- fleet
+- OpenMatch Components (Frontend, MatchMaker)
+- OpenTournament
+- Agones Fleet
+- Nakama Game Server
