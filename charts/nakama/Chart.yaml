@@ -1,0 +1,13 @@
+apiVersion: v2
+name: nakama
+description: A Helm chart for Nakama open source game server.
+type: application
+version: 0.1.0
+appVersion: "3.22.0"
+
+
+dependencies:
+- name: postgresql
+  version: "15.5.14"
+  repository: "https://charts.bitnami.com/bitnami"
+  condition: postgresql.enabled
