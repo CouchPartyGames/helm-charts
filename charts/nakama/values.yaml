@@ -118,3 +118,7 @@ affinity: {}
 
 postgresql:
   enabled: true
+
+
+cockroachdb:
+  enabled: false

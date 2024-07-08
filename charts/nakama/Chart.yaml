@@ -11,3 +11,7 @@ dependencies:
   version: "15.5.14"
   repository: "https://charts.bitnami.com/bitnami"
   condition: postgresql.enabled
+- name: cockroachdb
+  version: "13.0.2"
+  repository: "https://charts.cockroachdb.com/"
+  condition: cockroachdb.enabled
