@@ -1,6 +1,4 @@
-# Default values for nakama.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+# Nakama default values
 
 replicaCount: 1
 
