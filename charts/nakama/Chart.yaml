@@ -1,8 +1,8 @@
 apiVersion: v2
 name: nakama
-description: A Helm chart for Nakama open source game server.
+description: Nakama Game Server
 type: application
-version: 0.2.1
+version: 0.2.2
 appVersion: "3.22.0"
 
 
