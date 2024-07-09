@@ -14,6 +14,25 @@ entries:
   nakama:
   - apiVersion: v2
     appVersion: 3.22.0
+    created: "2024-07-09T13:27:45.225160829Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.5.14
+    - condition: cockroachdb.enabled
+      name: cockroachdb
+      repository: https://charts.cockroachdb.com/
+      version: 13.0.2
+    description: Nakama Game Server
+    digest: 6bfa26457f2af8fd49fcc92dd2b08637a0d6167c693906363d10b1fce0a2d651
+    name: nakama
+    type: application
+    urls:
+    - https://github.com/CouchPartyGames/helm-charts/releases/download/nakama-0.2.2/nakama-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 3.22.0
     created: "2024-07-08T21:21:43.442432916Z"
     dependencies:
     - condition: postgresql.enabled
@@ -295,4 +314,4 @@ entries:
     urls:
     - https://github.com/CouchPartyGames/cpg-helm/releases/download/tournament-time-0.0.1/tournament-time-0.0.1.tgz
     version: 0.0.1
-generated: "2024-07-08T21:21:43.442470756Z"
+generated: "2024-07-09T13:27:45.225199221Z"
